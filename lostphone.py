@@ -8,6 +8,7 @@ def clear():
 
 nonJBStateStart = True
 JBStateStart = False
+defaultBrowser = "anternetexplore"
 
 # MAIN
 os.system("title PhoneHack" if os.name == "nt" else "")
@@ -80,6 +81,7 @@ while True:
     print("")
     print("1) About")
     print("")
+    if(defaultBrowser == "anternetexplore"): print("2) Anternet Explorer")
     command = input("1 - 1> ")
     if(command == ""):
         print("Please enter a number")
@@ -93,3 +95,5 @@ while True:
             print("Open-Source!")
             print("")
             input("<>")
+        elif(command == 2):
+            print("")
