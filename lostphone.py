@@ -9,6 +9,8 @@ def clear():
 nonJBStateStart = True
 JBStateStart = False
 defaultBrowser = "anternetexplore"
+allowedWebsites = ("")
+DoURLThing = False
 
 # MAIN
 os.system("title PhoneHack" if os.name == "nt" else "")
@@ -76,24 +78,38 @@ time.sleep(3)
 clear()
 
 while True:
+    if(DoURLThing == True):
+        if(url == "antersoft.com"):
+            print("Contacting antersoft.com...")
+            time.sleep(3)
+            DoURLThing = False
     clear()
     print("eOS Start Menu")
     print("")
     print("1) About")
     print("")
     if(defaultBrowser == "anternetexplore"): print("2) Anternet Explorer")
-    command = input("1 - 1> ")
+    command = input("1 - 2> ")
     if(command == ""):
         print("Please enter a number")
         print("")
         time.sleep(4)
     elif(command != ""):
         commandInt = int(command)
-        if(command == 1):
+        if(commandInt == 1):
             print("eOS Tabby v1.0.0")
             print("By l0stphone")
             print("Open-Source!")
             print("")
             input("<>")
-        elif(command == 2):
-            print("")
+        elif(commandInt == 2):
+            if(defaultBrowser == "anternetexplore"):
+                print("Starting Anternet Explorer...")
+                time.sleep(3)
+                clear()
+                print("Welcome, %s, to Anternet Explorer!" % username)
+                print("")
+                print("For a list of websites to visit, go to antersoft.com")
+                time.sleep(1)
+                url = input("Where would you like to go? URL: ")
+                DoURLThing = True
